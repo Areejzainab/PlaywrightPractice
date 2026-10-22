@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^26.6.3"
+    "@types/node": "^26.6.3",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }

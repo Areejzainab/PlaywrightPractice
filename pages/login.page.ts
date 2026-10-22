@@ -20,4 +20,16 @@ export class LoginPage {
   async expectLoginFormVisible() {
     await expect(this.page.getByPlaceholder('Username')).toBeVisible();
   }
+
+  async expectSessionCookie(username: string) {
+    await expect
+      .poll(() => this.page.evaluate(() => document.cookie))
+      .toContain(`session-username=${username}`);
+  }
+
+  async expectSessionCookieCleared() {
+    await expect
+      .poll(() => this.page.evaluate(() => document.cookie))
+      .not.toContain('session-username=');
+  }
 }

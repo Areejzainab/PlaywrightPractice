@@ -35,13 +35,13 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-  {
-    name: 'firefox',
-    use: {
-      ...devices['Desktop Firefox'],
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+      },
     },
-  },
-],
+  ],
 
   /* Run your local dev server before starting the tests */
   // webServer: {

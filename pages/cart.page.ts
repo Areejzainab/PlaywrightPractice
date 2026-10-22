@@ -7,8 +7,12 @@ export class CartPage {
     await expect(this.page.getByText(productName, { exact: true })).toBeVisible();
   }
 
-  async removeProduct() {
-    await this.page.getByRole('button', { name: 'Remove' }).click();
+  async removeProduct(productName: string) {
+    await this.page
+      .locator('.cart_item')
+      .filter({ hasText: productName })
+      .getByRole('button', { name: 'Remove' })
+      .click();
   }
 
   async checkout() {

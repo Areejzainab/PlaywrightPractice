@@ -29,6 +29,14 @@ export class InventoryPage {
     await this.page.getByRole('button', { name: 'Add to cart' }).first().click();
   }
 
+  async addProductToCart(productName: string) {
+    await this.page
+      .locator('.inventory_item')
+      .filter({ hasText: productName })
+      .getByRole('button', { name: 'Add to cart' })
+      .click();
+  }
+
   async openCart() {
     await this.page.getByRole('button', { name: /Cart/ }).click();
   }
@@ -41,4 +49,5 @@ export class InventoryPage {
     await this.page.getByRole('button', { name: 'Open Menu' }).click();
     await this.page.getByRole('button', { name: 'Logout' }).click();
   }
+
 }
